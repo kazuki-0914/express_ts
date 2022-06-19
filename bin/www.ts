@@ -8,6 +8,10 @@ var app = require('../app');
 var debug = require('debug')('express-ts:server');
 var http = require('http');
 
+// import * as app from "../app";
+// import * as debug from "debug";"express-ts:server";
+// import http from'http';
+
 /**
  * Get port from environment and store in Express.
  */

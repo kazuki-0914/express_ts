@@ -1,5 +1,5 @@
 
-var express = require('express');
+import express from 'express'
 // var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -9,7 +9,7 @@ const cacheControl = require('express-cache-controller');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+var app  = express();
 
 app.use(cacheControl({
   noStore: true
@@ -32,4 +32,4 @@ app.use(function(req:any, res:any, next:any) {
     res.status(500).send('Something broke!');
   });
 
-module.exports = app;
+  module.exports = app;
