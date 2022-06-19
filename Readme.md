@@ -14,7 +14,9 @@ npm install -D npm-run-all
 
 npm i --save-dev @types/node
 
-npm i --save-dev @types/express`
+npm i --save-dev @types/express
+npm i --save-dev @types/morgan
+npm i --save-dev @types/cookie-parser
 
 # git
 https://qiita.com/konweb/items/621722f67fdd8f86a017
@@ -28,6 +30,7 @@ git push origin master
 npm i express-cache-controller
 https://www.npmjs.com/package/express-cache-controller
 https://web.dev/i18n/ja/http-cache/
+
 
 npm i --save-dev @types/debug
 
@@ -68,6 +71,7 @@ https://maku.blog/p/j6iu7it/
 https://github.com/prettier/eslint-config-prettier#installation
 npm install --save-dev eslint-config-prettier
 
+https://ics.media/entry/17030/
 
 # vscode plugin
 eslint

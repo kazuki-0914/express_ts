@@ -1,35 +1,34 @@
+import express,{Request,Response} from 'express'
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import cacheControl from 'express-cache-controller';
 
-import express from 'express'
-// var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const cacheControl = require('express-cache-controller');
+import index from './routes/index';
+import users from './routes/users';
 
+const  app = express();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app  = express();
-
-app.use(cacheControl({
-  noStore: true
-}));
+app.use(
+    cacheControl({
+        noStore: true
+    })
+);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// TODO 
+app.use('/', index);
+app.use('/users', users);
 
-app.use(function(req:any, res:any, next:any) {
+app.use(function (req: Request, res: Response) {
     res.status(404).send('Sorsendry cansendt find that!');
-  });
+});
 
-  app.use(function(err:any, req:any, res:any, next:any) {
+app.use(function (err: Error, req: Request, res: Response) {
     console.error(err.stack);
     res.status(500).send('Something broke!');
-  });
+});
 
-  module.exports = app;
+export default app;
